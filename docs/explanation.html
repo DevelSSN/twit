@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <p class="prompt"><a href="/twit">cd twit</a></p>
+      <p class="prompt"><a href="/">cd /</a></p>
+      <h1 class="cursor">Git Commands Reference</h1>
+      <p class="muted">
+        A terminal-style quick reference for Git workflows and internals.
+      </p>
+
+      <div class="block">
+        <h2 class="prompt">Repository Setup</h2>
+
+        <div class="project">
+          <h3><code>git init</code></h3>
+          <p>
+            Initialize a new Git repository in the current directory. Creates a
+            hidden <code>.git</code> folder that tracks all version history and
+            configuration for your project.
+          </p>
+        </div>
+
+        <div class="project">
+          <h3><code>git clone &lt;url&gt;</code></h3>
+          <p>
+            Clone an existing repository from a remote source. Downloads the
+            entire project history and sets up a local working copy linked to
+            the remote.
+          </p>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="block">
+        <h2 class="prompt">Basic Workflow</h2>
+
+        <div class="project">
+          <h3><code>git status</code></h3>
+          <p>
+            Show the current state of the working directory and staging area.
+            Displays modified, staged, and untracked files.
+          </p>
+        </div>
+
+        <div class="project">
+          <h3><code>git add &lt;file&gt;</code></h3>
+          <p>
+            Stage changes for the next commit by moving them into the staging
+            area.
+          </p>
+        </div>
+
+        <div class="project">
+          <h3><code>git commit -m "message"</code></h3>
+          <p>Record a snapshot of staged changes with a descriptive message.</p>
+        </div>
+
+        <div class="project">
+          <h3><code>git restore &lt;file&gt;</code></h3>
+          <p>
+            Discard uncommitted changes and revert file to last committed state.
+          </p>
+        </div>
+
+        <div class="project">
+          <h3><code>git rm &lt;file&gt;</code></h3>
+          <p>Remove a file and stage its deletion for the next commit.</p>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="block">
+        <h2 class="prompt">Branching & Merging</h2>
+
+        <div class="project">
+          <h3><code>git branch</code></h3>
+          <p>List, create, or delete branches for isolated development.</p>
+        </div>
+
+        <div class="project">
+          <h3><code>git switch &lt;branch&gt;</code></h3>
+          <p>Switch between branches using a modern, focused command.</p>
+        </div>
+
+        <div class="project">
+          <h3><code>git merge &lt;branch&gt;</code></h3>
+          <p>
+            Merge another branch into the current branch, combining histories.
+          </p>
+        </div>
+
+        <div class="project">
+          <h3><code>git rebase &lt;branch&gt;</code></h3>
+          <p>Reapply commits onto a new base to create a linear history.</p>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="block">
+        <h2 class="prompt">Remote Repositories</h2>
+
+        <div class="project">
+          <h3><code>git remote -v</code></h3>
+          <p>Show configured remote repositories and their URLs.</p>
+        </div>
+
+        <div class="project">
+          <h3><code>git fetch</code></h3>
+          <p>Download changes from a remote without modifying working files.</p>
+        </div>
+
+        <div class="project">
+          <h3><code>git pull</code></h3>
+          <p>Fetch and merge remote changes into the current branch.</p>
+        </div>
+
+        <div class="project">
+          <h3><code>git push</code></h3>
+          <p>Upload local commits to a remote repository.</p>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="block">
+        <h2 class="prompt">History & Inspection</h2>
+
+        <div class="project">
+          <h3><code>git log</code></h3>
+          <p>Display commit history in chronological order.</p>
+        </div>
+
+        <div class="project">
+          <h3><code>git diff</code></h3>
+          <p>
+            Show line-by-line differences between commits or working changes.
+          </p>
+        </div>
+
+        <div class="project">
+          <h3><code>git show &lt;commit&gt;</code></h3>
+          <p>Inspect a specific commit and its changes.</p>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="block">
+        <h2 class="prompt">Undoing Changes</h2>
+
+        <div class="project">
+          <h3><code>git reset &lt;commit&gt;</code></h3>
+          <p>
+            Move branch pointer to a specific commit (can affect staging and
+            working directory).
+          </p>
+        </div>
+
+        <div class="project">
+          <h3><code>git revert &lt;commit&gt;</code></h3>
+          <p>Create a new commit that safely undoes a previous commit.</p>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="block">
+        <h2 class="prompt">Stashing</h2>
+
+        <div class="project">
+          <h3><code>git stash</code></h3>
+          <p>Temporarily save uncommitted changes for later use.</p>
+        </div>
+
+        <div class="project">
+          <h3><code>git stash pop</code></h3>
+          <p>Reapply stashed changes and remove them from stash.</p>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="block">
+        <h2 class="prompt">Tagging</h2>
+
+        <div class="project">
+          <h3><code>git tag</code></h3>
+          <p>Mark specific commits for releases or versioning.</p>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="block">
+        <h2 class="prompt">Plumbing Commands</h2>
+
+        <div class="project">
+          <h3><code>git cat-file -p &lt;object&gt;</code></h3>
+          <p>Inspect Git objects (blobs, trees, commits) at a low level.</p>
+        </div>
+
+        <div class="project">
+          <h3><code>git hash-object &lt;file&gt;</code></h3>
+          <p>
+            Generate SHA hash for a file and optionally store it in Git’s object
+            database.
+          </p>
+        </div>
+
+        <div class="project">
+          <h3><code>git ls-tree &lt;tree&gt;</code></h3>
+          <p>List contents of a tree object from a commit.</p>
+        </div>
+
+        <div class="project">
+          <h3><code>git rev-parse &lt;ref&gt;</code></h3>
+          <p>Resolve branch names or tags into commit hashes.</p>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="block muted">
+        <p><strong>Notes</strong></p>
+        <ul>
+          <li>Porcelain commands are user-friendly (commit, push, pull).</li>
+          <li>
+            Plumbing commands are low-level Git internals for advanced usage.
+          </li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>

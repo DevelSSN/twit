@@ -1,0 +1,97 @@
+/* ===== Theme ===== */
+:root {
+  --bg: #0d1117;
+  --text: #c9d1d9;
+  --accent: #58a6ff;
+  --muted: #8b949e;
+}
+
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "JetBrains Mono", monospace;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ===== Layout ===== */
+main {
+  max-width: 720px;
+  margin: auto;
+  padding: 24px;
+}
+
+/* Center only homepage */
+body.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* ===== Typography ===== */
+h1 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ===== Links ===== */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--accent);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* ===== Terminal UI ===== */
+.prompt::before {
+  content: "> ";
+  color: var(--accent);
+}
+
+.block {
+  margin-top: 1.5rem;
+}
+
+/* ===== Projects ===== */
+.project {
+  margin: 1.5rem 0;
+}
+
+/* ===== Cursor animation ===== */
+.cursor::after {
+  content: "_";
+  margin-left: 4px;
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  body.home {
+    align-items: flex-start;
+    padding-top: 40px;
+    height: auto;
+  }
+}
